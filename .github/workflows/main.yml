@@ -72,7 +72,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.NIGHTLY_GITHUB_TOKEN }}
         run: |
-          poetry run python -m gtnh.cli.generate_experimental --id "${{ github.run_number }}" --update-available
+          poetry run python -m gtnh.cli.generate_experimental --update-available
           poetry run python -m gtnh.cli.generate_experimental.py
       - name: Save cached mod zips
         uses: actions/cache/save@v4
