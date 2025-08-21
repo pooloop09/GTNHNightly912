@@ -3,7 +3,8 @@ name = "gtnh"
 version = "0.9.0"
 description = "GTNH Modpack Updater and Assembler"
 authors = ["Jason Mitchell <mitchej@gmail.com>"]
-license = "lgpl 3.0"
+license = "lgpl-3.0"
+packages = [{ include = "gtnh", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
