@@ -25,9 +25,6 @@ jobs:
         shell: bash
         run: echo "${{ secrets.NIGHTLY_GITHUB_TOKEN }}" > ~/.github_personal_token
 
-      - name: Install root project
-        run: poetry install --no-interaction
-
       # install & configure poetry
       - name: Install Poetry
         uses: snok/install-poetry@v1
@@ -35,6 +32,9 @@ jobs:
           virtualenvs-create: true
           virtualenvs-in-project: true
           installer-parallel: true
+
+      - name: Install root project
+        run: poetry install --no-interaction
 
       # load cached venv if cache exists
       - name: Load cached venv
