@@ -25,6 +25,9 @@ jobs:
         shell: bash
         run: echo "${{ secrets.NIGHTLY_GITHUB_TOKEN }}" > ~/.github_personal_token
 
+      - name: Install root project
+        run: poetry install --no-interaction
+
       # install & configure poetry
       - name: Install Poetry
         uses: snok/install-poetry@v1
